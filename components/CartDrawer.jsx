@@ -84,7 +84,7 @@ export default function CartDrawer() {
 
     setIsSubmitting(true);
 
-    const orderId = `GF-${Math.floor(1000 + Math.random() * 9000)}`;
+    const orderId = `RF-${Math.floor(1000 + Math.random() * 9000)}`;
     const dateStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     // Itemized lines
@@ -118,14 +118,17 @@ ${specialInstructions.trim() ? `• *Special Notes:* ${specialInstructions.trim(
 _Please confirm kitchen prep and estimated delivery time._`;
 
     const encodedText = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/923009202325?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/923342850819?text=${encodedText}`;
 
     // Trigger WhatsApp
     window.open(whatsappUrl, '_blank');
 
     setTimeout(() => {
+      clearCart();
       setIsSubmitting(false);
-      showToast('Order dispatched to WhatsApp! 🛵');
+      setIsCartOpen(false);
+      setSpecialInstructions('');
+      showToast('Order dispatched to WhatsApp! Tray cleared 🛵');
     }, 600);
   };
 
@@ -142,7 +145,7 @@ _Please confirm kitchen prep and estimated delivery time._`;
             className="absolute inset-0 bg-darkSlate-950/80 backdrop-blur-md transition-opacity"
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -304,7 +307,7 @@ _Please confirm kitchen prep and estimated delivery time._`;
                               setCustomerName(e.target.value);
                               if (formErrors.name) setFormErrors((p) => ({ ...p, name: null }));
                             }}
-                            className={`w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-white placeholder-slate-500 ${
+                            className={`w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-base sm:text-sm text-white placeholder-slate-500 ${
                               formErrors.name ? 'border-crimson-500' : ''
                             }`}
                           />
@@ -326,13 +329,13 @@ _Please confirm kitchen prep and estimated delivery time._`;
                           <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                           <input
                             type="tel"
-                            placeholder="e.g. 0300 9202325"
+                            placeholder="e.g. 0334 2850819"
                             value={phoneNumber}
                             onChange={(e) => {
                               setPhoneNumber(e.target.value);
                               if (formErrors.phone) setFormErrors((p) => ({ ...p, phone: null }));
                             }}
-                            className={`w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-white placeholder-slate-500 ${
+                            className={`w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-base sm:text-sm text-white placeholder-slate-500 ${
                               formErrors.phone ? 'border-crimson-500' : ''
                             }`}
                           />
@@ -360,7 +363,7 @@ _Please confirm kitchen prep and estimated delivery time._`;
                               setDeliveryAddress(e.target.value);
                               if (formErrors.address) setFormErrors((p) => ({ ...p, address: null }));
                             }}
-                            className={`w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-white placeholder-slate-500 resize-none ${
+                            className={`w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-base sm:text-sm text-white placeholder-slate-500 resize-none ${
                               formErrors.address ? 'border-crimson-500' : ''
                             }`}
                           />
@@ -385,7 +388,7 @@ _Please confirm kitchen prep and estimated delivery time._`;
                             placeholder="e.g. Extra spicy, separate raita, send cutlery"
                             value={specialInstructions}
                             onChange={(e) => setSpecialInstructions(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-white placeholder-slate-500"
+                            className="w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-base sm:text-sm text-white placeholder-slate-500"
                           />
                         </div>
                       </div>
@@ -396,7 +399,7 @@ _Please confirm kitchen prep and estimated delivery time._`;
                           <CreditCard className="w-3.5 h-3.5 text-gold-400" />
                           Select Payment Mode
                         </label>
-                        <div className="grid grid-cols-2 gap-2 text-xs">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
                           {['Cash on Delivery (COD)', 'JazzCash / EasyPaisa', 'Bank Transfer / Raast'].map(
                             (method) => {
                               const isSelected = paymentMethod === method;
@@ -463,7 +466,7 @@ _Please confirm kitchen prep and estimated delivery time._`;
                   </button>
 
                   <p className="text-[11px] text-center text-slate-400">
-                    🔒 Orders go straight to Royal Foods Hussainabad kitchen on <span className="text-gold-400 font-semibold">+92 300 9202325</span>.
+                    🔒 Orders go straight to Royal Foods Hussainabad kitchen on <span className="text-gold-400 font-semibold">+92 334 2850819</span>.
                   </p>
                 </div>
               )}

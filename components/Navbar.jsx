@@ -37,13 +37,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Brand Logo & Live Status */}
-          <div className="flex items-center space-x-3">
-            <a href="#" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-crimson-600 via-crimson-500 to-gold-500 flex items-center justify-center shadow-glow-crimson group-hover:scale-105 transition-transform duration-200">
-                <Flame className="w-6 h-6 text-white animate-pulse" />
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <a href="#" className="flex items-center space-x-2 sm:space-x-3 group">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-crimson-600 via-crimson-500 to-gold-500 flex items-center justify-center shadow-glow-crimson group-hover:scale-105 transition-transform duration-200 shrink-0">
+                <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-pulse" />
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1.5">
+                <span className="font-extrabold text-base sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
                   Royal <span className="text-gold-400 font-medium">Foods & Grill</span>
                 </span>
                 
@@ -53,7 +53,7 @@ export default function Navbar() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
-                  <span className="text-[11px] font-medium text-emerald-400 tracking-wide">
+                  <span className="text-[10px] sm:text-[11px] font-medium text-emerald-400 tracking-wide">
                     Open Now • Closes 2 AM
                   </span>
                 </div>
@@ -79,19 +79,19 @@ export default function Navbar() {
             
             {/* Quick Call Button (Desktop) */}
             <a
-              href="tel:+923009202325"
+              href="tel:+923342850819"
               className="hidden lg:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-gold-500/50 hover:bg-white/10 transition-all text-xs font-medium text-slate-300"
               title="Call Kitchen Directly"
             >
               <PhoneCall className="w-3.5 h-3.5 text-gold-400" />
-              <span>0300 9202325</span>
+              <span>0334 2850819</span>
             </a>
 
             {/* Floating Cart Trigger */}
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsCartOpen(true)}
-              className="relative flex items-center space-x-2 sm:space-x-3 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 text-white font-semibold text-xs sm:text-sm shadow-glow-crimson transition-all border border-crimson-400/30"
+              className="relative flex items-center space-x-1.5 sm:space-x-2.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 text-white font-semibold text-xs sm:text-sm shadow-glow-crimson transition-all border border-crimson-400/30 shrink-0"
               aria-label="View Shopping Cart"
             >
               <div className="relative">
@@ -106,7 +106,7 @@ export default function Navbar() {
                   </motion.span>
                 )}
               </div>
-              <span className="hidden xs:inline">
+              <span className="hidden min-[420px]:inline font-bold">
                 {totalItemsCount > 0 ? (
                   <span>Rs. {subtotal.toLocaleString()}</span>
                 ) : (
@@ -118,7 +118,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 focus:outline-none"
+              className="md:hidden w-10 h-10 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 flex items-center justify-center focus:outline-none transition-colors shrink-0"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
@@ -133,8 +133,8 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden overflow-hidden border-t border-white/10 mt-3 pt-3 pb-2"
+              transition={{ duration: 0.25 }}
+              className="md:hidden overflow-hidden border-t border-white/10 mt-3 pt-3 pb-2 bg-darkSlate-900/95 backdrop-blur-xl rounded-2xl p-4 shadow-2xl"
             >
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
@@ -142,22 +142,25 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 transition-colors"
+                    className="px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-colors"
                   >
                     {link.name}
                   </a>
                 ))}
-                <div className="pt-2 flex items-center justify-between border-t border-white/5 px-2">
-                  <div className="flex items-center space-x-2 text-xs text-slate-400">
-                    <Clock className="w-3.5 h-3.5 text-gold-400" />
-                    <span>4:00 PM – 2:00 AM</span>
+                <div className="pt-3 mt-1 flex flex-col gap-2.5 border-t border-white/10">
+                  <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+                    <div className="flex items-center space-x-1.5">
+                      <Clock className="w-3.5 h-3.5 text-gold-400" />
+                      <span>4:00 PM – 2:00 AM Daily</span>
+                    </div>
+                    <span className="text-emerald-400 font-semibold">• Open</span>
                   </div>
                   <a
-                    href="tel:+923009202325"
-                    className="text-xs text-gold-400 font-semibold flex items-center gap-1 hover:underline"
+                    href="tel:+923342850819"
+                    className="w-full py-2.5 px-3 rounded-xl bg-white/5 border border-white/10 text-xs text-gold-400 font-bold flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
                   >
-                    <PhoneCall className="w-3.5 h-3.5" />
-                    <span>0300 9202325</span>
+                    <PhoneCall className="w-4 h-4" />
+                    <span>Call Kitchen: 0334 2850819</span>
                   </a>
                 </div>
               </div>

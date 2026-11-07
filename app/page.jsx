@@ -77,11 +77,11 @@ export default function HomePage() {
       {/* 5. Hussainabad Heritage & Quality Assurance Banner */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden glass-panel border border-white/15 p-8 sm:p-12">
+          <div className="relative rounded-3xl overflow-hidden glass-panel border border-white/15 p-6 sm:p-8 md:p-12">
             <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-crimson-600/20 rounded-full blur-[100px] pointer-events-none" />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              <div className="lg:col-span-8 space-y-4">
+              <div className="lg:col-span-8 space-y-4 text-center lg:text-left">
                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-bold uppercase tracking-wider">
                   <Award className="w-3.5 h-3.5" />
                   <span>The Hussainabad Legacy</span>
@@ -92,7 +92,7 @@ export default function HomePage() {
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                   Located right on Hussainabad Food Street, Royal Foods & Grill has been serving Karachiites with unmatched charcoal grilling, handcrafted burger patties, and decadent dairy malai boti. When you order direct, you support local culinary craftsmen while enjoying the highest quality ingredients.
                 </p>
-                <div className="flex flex-wrap gap-4 pt-2">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 sm:gap-4 pt-2">
                   <div className="flex items-center space-x-2 text-xs text-slate-300 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
                     <span>100% Halal Certified Meats</span>
@@ -111,7 +111,7 @@ export default function HomePage() {
               <div className="lg:col-span-4 text-center lg:text-right">
                 <a
                   href="#menu"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-crimson-600 via-crimson-500 to-crimson-600 hover:from-crimson-500 hover:to-crimson-600 text-white font-black text-base shadow-glow-crimson transition-all border border-crimson-400/40 hover:scale-105"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-crimson-600 via-crimson-500 to-crimson-600 hover:from-crimson-500 hover:to-crimson-600 text-white font-black text-sm sm:text-base shadow-glow-crimson transition-all border border-crimson-400/40 hover:scale-105"
                 >
                   <ShoppingBag className="w-5 h-5 mr-2" />
                   <span>Order Fresh Now</span>

@@ -22,7 +22,7 @@ export default function HeroSection() {
     const text = encodeURIComponent(
       "Salam Royal Foods! 🍔 I'd like to place an order from your direct menu. Could you please share today's kitchen specials?"
     );
-    window.open(`https://wa.me/923009202325?text=${text}`, '_blank');
+    window.open(`https://wa.me/923342850819?text=${text}`, '_blank');
   };
 
   const heroFeaturedDish = {
@@ -40,26 +40,26 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 overflow-hidden">
       {/* Background Glow effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-crimson-600/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] bg-crimson-600/15 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 right-4 sm:right-10 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-gold-500/10 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Headlines & Call to Actions */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
             
             {/* Top Micro-pill */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-crimson-950/60 border border-crimson-500/30 text-crimson-400 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md shadow-inner"
+              className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-3.5 rounded-full bg-crimson-950/60 border border-crimson-500/30 text-crimson-400 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md shadow-inner max-w-full text-left"
             >
-              <Sparkles className="w-4 h-4 text-gold-400 animate-spin" style={{ animationDuration: '6s' }} />
-              <span>Hussainabad Food Street Karachi • Direct Kitchen Portal</span>
+              <Sparkles className="w-4 h-4 text-gold-400 shrink-0 animate-spin" style={{ animationDuration: '6s' }} />
+              <span className="truncate">Hussainabad Food Street Karachi • Direct Kitchen Portal</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -67,7 +67,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]"
+              className="text-2xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.16] sm:leading-[1.12]"
             >
               Direct Gourmet Fast Food —{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-crimson-500 via-gold-400 to-amber-300">
@@ -80,7 +80,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed"
+              className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed"
             >
               Order sizzling smash burgers, charcoal chicken malai boti, and stuffed-crust pizzas directly via WhatsApp. 
               <strong className="text-gold-400 font-semibold"> Skip the 25-30% aggregator commission</strong> and enjoy fresher, hotter food straight from our grill to your doorstep.
@@ -91,21 +91,21 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1 sm:pt-2"
             >
               <a
                 href="#menu"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-crimson-600 via-crimson-500 to-crimson-600 hover:from-crimson-500 hover:to-crimson-600 text-white font-bold text-base shadow-glow-crimson transition-all duration-200 border border-crimson-400/40 group cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-crimson-600 via-crimson-500 to-crimson-600 hover:from-crimson-500 hover:to-crimson-600 text-white font-bold text-sm sm:text-base shadow-glow-crimson transition-all duration-200 border border-crimson-400/40 group cursor-pointer"
               >
                 <span>Explore Menu</span>
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <button
                 onClick={handleDirectWhatsApp}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-glow-emerald transition-all duration-200 border border-emerald-400/30 group"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-glow-emerald transition-all duration-200 border border-emerald-400/30 group"
               >
-                <MessageCircle className="w-5 h-5 mr-2 text-white fill-white/20 group-hover:scale-110 transition-transform" />
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white fill-white/20 group-hover:scale-110 transition-transform" />
                 <span>Direct WhatsApp Order</span>
               </button>
             </motion.div>

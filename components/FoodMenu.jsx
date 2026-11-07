@@ -124,7 +124,7 @@ export default function FoodMenu() {
         </div>
 
         {/* Category Filter Switcher Tabs */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 mb-10 gap-2 sm:gap-3 scrollbar-none">
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 mb-8 sm:mb-10 gap-2 sm:gap-3 -mx-4 px-4 sm:mx-0 sm:px-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
             return (
@@ -316,21 +316,22 @@ export default function FoodMenu() {
       {/* Dish Quick Detail Modal */}
       <AnimatePresence>
         {selectedProductModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkSlate-950/80 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-darkSlate-950/85 backdrop-blur-md">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="glass-card max-w-lg w-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl relative"
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="glass-card max-w-lg w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-white/20 shadow-2xl relative"
             >
               <button
                 onClick={() => setSelectedProductModal(null)}
                 className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-darkSlate-900/80 text-white flex items-center justify-center hover:bg-crimson-600 transition-colors"
+                aria-label="Close details"
               >
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="h-60 relative">
+              <div className="h-52 sm:h-60 relative">
                 <img
                   src={selectedProductModal.image}
                   alt={selectedProductModal.name}
@@ -339,10 +340,10 @@ export default function FoodMenu() {
                 <div className="absolute inset-0 bg-gradient-to-t from-darkSlate-900 via-transparent to-transparent"></div>
               </div>
 
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
+              <div className="p-4 sm:p-6 space-y-4">
+                <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
                       {selectedProductModal.name}
                     </h3>
                     <div className="flex items-center space-x-2 text-xs text-gold-400 mt-1">
@@ -352,19 +353,19 @@ export default function FoodMenu() {
                       <span className="text-slate-300">{selectedProductModal.prepTime}</span>
                     </div>
                   </div>
-                  <span className="text-2xl font-black text-white">
+                  <span className="text-xl sm:text-2xl font-black text-white shrink-0">
                     Rs. {selectedProductModal.price}
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   {selectedProductModal.description}
                 </p>
 
                 {selectedProductModal.ingredients && (
                   <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Key Ingredients</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <h4 className="text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Key Ingredients</h4>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {selectedProductModal.ingredients.map((ing, i) => (
                         <span key={i} className="text-xs px-2.5 py-1 rounded-lg bg-white/10 text-slate-200">
                           {ing}
@@ -374,13 +375,13 @@ export default function FoodMenu() {
                   </div>
                 )}
 
-                <div className="pt-4 border-t border-white/10 flex items-center justify-end">
+                <div className="pt-3 sm:pt-4 border-t border-white/10">
                   <button
                     onClick={() => {
                       handleAdd(selectedProductModal);
                       setSelectedProductModal(null);
                     }}
-                    className="w-full py-3 rounded-xl bg-crimson-600 hover:bg-crimson-500 text-white font-bold text-sm shadow-glow-crimson transition-all"
+                    className="w-full py-3 rounded-xl bg-crimson-600 hover:bg-crimson-500 text-white font-bold text-xs sm:text-sm shadow-glow-crimson transition-all"
                   >
                     Add to Cart • Rs. {selectedProductModal.price}
                   </button>

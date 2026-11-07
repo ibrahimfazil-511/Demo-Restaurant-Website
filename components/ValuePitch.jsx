@@ -192,7 +192,7 @@ export default function ValuePitch() {
           </div>
 
           {/* Quick Callout in Comparison Box */}
-          <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-crimson-900/30 to-gold-900/20 border border-crimson-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-crimson-900/30 to-gold-900/20 border border-crimson-500/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <div className="flex items-center space-x-3 text-left">
               <div className="w-10 h-10 rounded-xl bg-crimson-600/30 border border-crimson-500/40 flex items-center justify-center shrink-0">
                 <Percent className="w-5 h-5 text-crimson-400" />
@@ -204,7 +204,7 @@ export default function ValuePitch() {
             </div>
             <a
               href="#menu"
-              className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors whitespace-nowrap"
+              className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors text-center shrink-0"
             >
               Order Now & Save
             </a>

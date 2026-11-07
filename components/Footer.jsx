@@ -57,20 +57,20 @@ export default function Footer() {
             </div>
 
             {/* Direct Phone CTA */}
-            <div className="flex flex-wrap gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-1">
               <a
-                href="tel:+923009202325"
-                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-crimson-600 hover:bg-crimson-500 text-white font-bold text-xs shadow-glow-crimson transition-all"
+                href="tel:+923342850819"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-crimson-600 hover:bg-crimson-500 text-white font-bold text-xs shadow-glow-crimson transition-all"
               >
                 <PhoneCall className="w-4 h-4" />
-                <span>Call Kitchen (0300 9202325)</span>
+                <span>Call Kitchen (0334 2850819)</span>
               </a>
 
               <a
-                href="https://wa.me/923009202325"
+                href="https://wa.me/923342850819"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-300 font-bold text-xs transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-300 font-bold text-xs transition-all"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400" />
                 <span>WhatsApp Chat</span>
@@ -128,7 +128,7 @@ export default function Footer() {
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://wa.me/923009202325"
+                  href="https://wa.me/923342850819"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-white/5 hover:bg-emerald-600/30 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all"
