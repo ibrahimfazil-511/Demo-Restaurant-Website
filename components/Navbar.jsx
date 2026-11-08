@@ -34,21 +34,21 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex min-w-0 items-center justify-between gap-2">
           
           {/* Brand Logo & Live Status */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <a href="#" className="flex items-center space-x-2 sm:space-x-3 group">
+          <div className="flex min-w-0 items-center">
+            <a href="#" className="flex min-w-0 items-center space-x-2 sm:space-x-3 group">
               <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-crimson-600 via-crimson-500 to-gold-500 flex items-center justify-center shadow-glow-crimson group-hover:scale-105 transition-transform duration-200 shrink-0">
                 <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-pulse" />
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-base sm:text-xl tracking-tight text-white flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+              <div className="flex min-w-0 flex-col">
+                <span className="flex min-w-0 items-center gap-1 truncate font-extrabold text-sm tracking-tight text-white min-[360px]:text-base sm:gap-1.5 sm:text-xl">
                   Royal <span className="text-gold-400 font-medium">Foods & Grill</span>
                 </span>
                 
                 {/* Live Pulsing Status Badge */}
-                <div className="flex items-center space-x-1.5 mt-0.5">
+                <div className="mt-0.5 hidden items-center space-x-1.5 min-[360px]:flex">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -75,7 +75,7 @@ export default function Navbar() {
           </nav>
 
           {/* Action Buttons: Phone & Cart Trigger */}
-          <div className="flex items-center space-x-3">
+          <div className="flex shrink-0 items-center space-x-1 sm:space-x-3">
             
             {/* Quick Call Button (Desktop) */}
             <a
@@ -134,7 +134,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="md:hidden overflow-hidden border-t border-white/10 mt-3 pt-3 pb-2 bg-darkSlate-900/95 backdrop-blur-xl rounded-2xl p-4 shadow-2xl"
+              className="md:hidden overflow-hidden border-t border-white/10 mt-3 rounded-2xl bg-darkSlate-900/95 p-4 pt-3 pb-2 shadow-2xl backdrop-blur-xl"
             >
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
